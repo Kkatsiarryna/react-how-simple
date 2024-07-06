@@ -8,6 +8,7 @@ import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRa
 
 function App() {
     console.log("App ren");
+
     return (
         <div className="App">
             <OnOff />
@@ -15,7 +16,6 @@ function App() {
             <OnOff />
 
             <UncotrolledAccordion titleValue={'Menu'}/>
-            <UncotrolledAccordion titleValue={'Users'}/>
 
             <UncontrolledRating/>
             {/*<input/>*/}
