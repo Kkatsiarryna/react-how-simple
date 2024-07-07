@@ -1,42 +1,32 @@
 import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import UncotrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccrordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 function App() {
     console.log("App ren");
 
+    let [ratingValue, setRatingValue] = React.useState<RatingValueType>(0);
+    let [accordionCollasped, setAccordionCollapsed] = React.useState<boolean>(false);
+    let [onOff, setOnOff] = React.useState<boolean>(false);
+
     return (
         <div className="App">
-            <OnOff />
-            <OnOff/>
-            <OnOff />
-
+            <h2>Uncontrolled</h2>
             <UncotrolledAccordion titleValue={'Menu'}/>
-
             <UncontrolledRating/>
-            {/*<input/>*/}
-            {/*<input checked={true} value={"hi"} type={"password"}/>*/}
-            {/*<PageTitle title={"his App component"}/>*/}
-            {/*<PageTitle title={"user title"}/>*/}
-            {/*Article 1*/}
-            {/*<Accordion titleValue={"Меню 1"} collapsed = {true}/>*/}
-            {/*<Accordion titleValue={"Меню 2"} collapsed = {false}/>*/}
-            {/*Article 2*/}
-            {/*<Rating value={0}/>*/}
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={2}/>*/}
-            {/*<Rating value={3}/>*/}
-            {/*<Rating value={4}/>*/}
-            {/*<Rating value={5}/>*/}
+            <UncontrolledOnOff onChange={setOnOff}/> {onOff.toString()}
 
-
+            <h2>Controlled</h2>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <Accordion titleValue={"Menu"} collapsed={accordionCollasped} onChange={() => setAccordionCollapsed(!accordionCollasped)}/>
+            <OnOff value={onOff} onChange={setOnOff}/>
         </div>
     )
-        ;
 }
 
 

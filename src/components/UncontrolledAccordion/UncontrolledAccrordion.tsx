@@ -2,24 +2,18 @@ import React from "react";
 
 type AccordionPropsType = {
     titleValue: string;
-    //collapsed: boolean;
 }
 
 function UncotrolledAccordion(props: AccordionPropsType) {
     console.log("Accordion ren");
-
-
-    //const collapsed = true;
-
     const [collapsed, setCollapsed] = React.useState(true);
 
     const onClickHandler = () => {
         setCollapsed(!collapsed)
     }
-
     return <div>
         <AccordionTitle title={props.titleValue} onClick={onClickHandler}/>
-         {/*<button onClick={onClickHandler}>TOGGLE</button>*/}
+        {/*<button onClick={onClickHandler}>TOGGLE</button>*/}
         {!collapsed && <AccordionBody/>}
     </div>
 }

@@ -2,22 +2,20 @@ import {useState} from "react";
 
 type PropsType = {
     //on: boolean
-    value: boolean
-    onChange: (value: boolean) => void
+    onChange: (value: boolean) => void;
 }
 
-export function OnOff(props: PropsType) {
+export function UncontrolledOnOff(props: PropsType) {
 
-    //const[on, setOn] =useState<boolean>(false);
+    const[on, setOn] =useState<boolean>(false);
 
     const onClicOnkHandler = () => {
-        //setOn(true);
-        props.onChange(true);
-
+        setOn(true);
+        props.onChange(true)
     }
     const onClicOffkHandler = () => {
-       // setOn(false)
-        props.onChange(false);
+        setOn(false)
+        props.onChange(false)
     }
 
 
@@ -28,7 +26,7 @@ export function OnOff(props: PropsType) {
         border: "1px solid black",
         display: 'inline-block',
         padding: '2px',
-        backgroundColor: props.value ? "green" : "white"
+        backgroundColor: on ? "green" : "white"
     }
     const offStyle = {
         width: '30px',
@@ -37,7 +35,7 @@ export function OnOff(props: PropsType) {
         display: 'inline-block',
         marginLeft: "2px",
         padding: '2px',
-        backgroundColor: props.value ? "white" : "red",
+        backgroundColor: on ? "white" : "red",
     }
     const indicatorStyle = {
         width: '10px',
@@ -46,7 +44,7 @@ export function OnOff(props: PropsType) {
         border: "1px solid black",
         display: 'inline-block',
         marginLeft: "5px",
-        backgroundColor: props.value ? "green" : "red",
+        backgroundColor: on ? "green" : "red",
     }
 
 
