@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
+import {Accordion} from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import UncotrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccrordion";
@@ -10,9 +10,9 @@ import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOf
 function App() {
     console.log("App ren");
 
-    let [ratingValue, setRatingValue] = React.useState<RatingValueType>(0);
-    let [accordionCollasped, setAccordionCollapsed] = React.useState<boolean>(false);
-    let [onOff, setOnOff] = React.useState<boolean>(false);
+    const [ratingValue, setRatingValue] = React.useState<RatingValueType>(0);
+    const [accordionCollasped, setAccordionCollapsed] = React.useState<boolean>(false);
+    const [onOff, setOnOff] = React.useState<boolean>(false);
 
     return (
         <div className="App">
