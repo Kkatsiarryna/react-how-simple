@@ -1,14 +1,11 @@
-import React from "react";
+import React, {memo} from "react";
 import {reducer, TOGGLE_COLLAPSED} from "./reducer";
 
 type AccordionPropsType = {
     titleValue: string;
 }
 
-
-
-
-function UncotrolledAccordion(props: AccordionPropsType) {
+export function UncotrolledAccordionFirst(props: AccordionPropsType) {
     console.log("Accordion ren");
     //const [collapsed, setCollapsed] = React.useState(true);
     const [state, dispatch] = React.useReducer(reducer, {collapsed: false});
@@ -44,4 +41,4 @@ function AccordionBody() {
     </ul>)
 }
 
-export default UncotrolledAccordion;
+export const UncotrolledAccordion = memo(UncotrolledAccordionFirst);

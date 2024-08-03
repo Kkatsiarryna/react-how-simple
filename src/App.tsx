@@ -3,9 +3,9 @@ import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
-import UncotrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccrordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import {UncotrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccrordion";
 
 function App() {
     console.log("App ren");

@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {memo, useState} from "react";
 
 type PropsType = {
     //on: boolean
@@ -6,7 +6,7 @@ type PropsType = {
     defaultOn?: boolean
 }
 
-export function UncontrolledOnOff(props: PropsType) {
+export function UncontrolledOnOffFirst(props: PropsType) {
 
     const[on, setOn] =useState(props.defaultOn ? props.defaultOn : false);
 
@@ -58,3 +58,5 @@ export function UncontrolledOnOff(props: PropsType) {
         </div>
     )
 }
+
+export const UncontrolledOnOff = memo(UncontrolledOnOffFirst)

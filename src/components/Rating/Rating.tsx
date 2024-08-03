@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 
 export type RatingValueType =  0 | 1 | 2 | 3 | 4 | 5
 
@@ -7,7 +7,9 @@ type RatingPropsType = {
     onClick: (value: RatingValueType) => void
 }
 
-export function Rating(props: RatingPropsType) {
+export const Rating = memo(RatingFirst);
+
+export function RatingFirst(props: RatingPropsType) {
     console.log("Rating ren");
     return <div>
         <Star selected={ props.value > 0 } onClick={props.onClick} value={1}/>

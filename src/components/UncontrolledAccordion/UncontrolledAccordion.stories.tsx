@@ -1,6 +1,7 @@
-import UncotrolledAccordion from "./UncontrolledAccrordion";
+
 import React from "react";
 import { action } from '@storybook/addon-actions';
+import {UncotrolledAccordion} from "./UncontrolledAccrordion";
 
 
 export default {

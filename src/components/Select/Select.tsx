@@ -1,4 +1,4 @@
-import React, {useState, KeyboardEvent, useEffect} from "react";
+import React, {useState, KeyboardEvent, useEffect, memo} from "react";
 import styles from './Select.module.css';
 
 type ItemType = {
@@ -11,7 +11,9 @@ type SelectPropsType = {
     items: ItemType[]
 }
 
-export const Select = (props: SelectPropsType) => {
+
+
+export const SelectFirst = (props: SelectPropsType) => {
     const [active, setActive] = useState<boolean>(false);
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value);
 
@@ -80,6 +82,7 @@ export const Select = (props: SelectPropsType) => {
     );
 };
 
+export const Select = memo(SelectFirst);
 
 // const [selectedValue, setSelectedValue] = useState<any>(null);
 //

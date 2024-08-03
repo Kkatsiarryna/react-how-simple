@@ -1,12 +1,13 @@
-import React from "react";
+import React, {memo} from "react";
 
 type PropsType = {
     //on: boolean
     value: boolean
     onChange: (value: boolean) => void
 }
+export const OnOff = memo(OnOffFirst);
 
-export function OnOff(props: PropsType) {
+export function OnOffFirst(props: PropsType) {
 
     //const[on, setOn] =useState<boolean>(false);
 

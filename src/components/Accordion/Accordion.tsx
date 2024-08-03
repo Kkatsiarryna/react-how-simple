@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 
 type ItemType = {
     title: string
@@ -13,13 +13,15 @@ type AccordionPropsType = {
     onItemClick: (value: any) => void
 }
 
-export function Accordion(props: AccordionPropsType) {
+export function AccordionFirst(props: AccordionPropsType) {
     console.log("Accordion ren");
     return <div>
         <AccordionTitle title={props.titleValue} onChange={props.onChange}/>
         { !props.collapsed && <AccordionBody items={props.items} onClick={props.onItemClick}/>}
     </div>
 }
+
+export const Accordion = memo(AccordionFirst);
 
 type AccordionTitlePropsType = {
     title: string;
