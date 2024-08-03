@@ -23,7 +23,12 @@ function App() {
 
             <h2>Controlled</h2>
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Accordion titleValue={"Menu"} collapsed={accordionCollasped} onChange={() => setAccordionCollapsed(!accordionCollasped)}/>
+            <Accordion titleValue={"Menu"}
+                       collapsed={accordionCollasped}
+                       onChange={() => setAccordionCollapsed(!accordionCollasped)}
+                       items={[{title: "one", value: 1}]}
+                       onItemClick={()=>{}}
+            />
             <OnOff value={onOff} onChange={setOnOff}/>
         </div>
     )
