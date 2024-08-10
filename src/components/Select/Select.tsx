@@ -4,6 +4,8 @@ import styles from './Select.module.css';
 type ItemType = {
     title: string
     value: any
+    idCountry? : number
+    population?: number
 }
 type SelectPropsType = {
     value?: any
@@ -14,6 +16,7 @@ type SelectPropsType = {
 
 
 export const SelectFirst = (props: SelectPropsType) => {
+    console.log('call SelectFirst')
     const [active, setActive] = useState<boolean>(false);
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value);
 
@@ -24,7 +27,6 @@ export const SelectFirst = (props: SelectPropsType) => {
         setHoveredElementValue(props.value);
     }, [props.value])
 
-    console.log(selectedItem);
     const toggleItems = () => {
         setActive(!active);
     }
